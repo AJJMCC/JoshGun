@@ -21,7 +21,7 @@ public class GunController : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0))
         {
             MyAnim.SetTrigger("Fire");
-            Invoke("Fire", 0.05f);
+            Invoke("Fire", 0.06f);
         }
 
 
@@ -46,6 +46,7 @@ public class GunController : MonoBehaviour {
 
         if (Physics.Raycast(ray, out hit))
         {
+            Debug.Log(hit.collider.name);
            if ( hit.collider.GetComponent<QuickStart>() != null)
             {
                 hit.collider.GetComponent<QuickStart>().enabled = true;
